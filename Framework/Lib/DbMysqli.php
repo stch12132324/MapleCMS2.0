@@ -80,7 +80,7 @@ class DbMysqli{
         }
     }
 //------------------stmt模式下query-----------------------------
-    public function stmt_query(&$sql='' , &$data=''){
+    public function stmt_query($sql='' , &$data=''){
         $start_time = $this->time_used();
         $stmt = $this->conn->stmt_init();
         $stmt->prepare($sql);
@@ -217,7 +217,7 @@ class DbMysqli{
         }
     }
 //------------------插入-----------------------------
-    public function insert(&$data = ''){
+    public function insert($data = ''){
         if(is_array($data)){
             foreach($data as $key=>$val){
                 $keys[] = $key;
